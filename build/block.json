@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "my-plugin/notice",
+  "title": "Notice",
+  "category": "text",
+  "parent": [
+    "core/group"
+  ],
+  "icon": "star",
+  "description": "Shows warning, error or success notices...",
+  "version": "1.0.3",
+  "attributes": {
+    "quote": {
+      "type": "string",
+      "source": "html",
+      "selector": ".quote"
+    },
+    "person": {
+      "type": "string",
+      "source": "html",
+      "selector": ".person"
+    }
+  },
+  "textdomain": "webcamp",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": [
+    "file:./style.css",
+    "example-shared-style"
+  ]
+}

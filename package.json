@@ -1,0 +1,25 @@
+{
+  "name": "krish-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
+    "sync": "browser-sync start -p 'localhost/wordpress/' --files '**/*.php' 'build/*.js' 'build/*.css'",
+    "buildwp": "wp-scripts build",
+    "build": "npm-run-all --sequential buildwp tailwindbuild",
+    "wpstart": "wp-scripts start",
+    "start": "wp-scripts start",
+    "tailwindbuild": "tailwindcss -i ./src/index.css -o ./build/index.css --minify",
+    "tailwindwatch": "tailwindcss -i ./src/index.css -o ./build/index.css --watch --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/block-editor": "^12.15.0",
+    "@wordpress/components": "^25.13.0",
+    "@wordpress/scripts": "^26.18.0"
+  }
+}
